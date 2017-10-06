@@ -1,7 +1,7 @@
 # hands-on-solvers
 
 For running [Minisat](http://minisat.se/), [Z3](https://github.com/z3prover/z3)
-and [CVC4](http://cvc4.cs.stanford.edu/web/) you can use 
+and [CVC4](http://cvc4.cs.stanford.edu/web/), you can use
 [Docker](https://www.docker.com/) containers the installation of which is
 explained in the following.
 
