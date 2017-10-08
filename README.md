@@ -39,7 +39,7 @@ docker run -it julianthome/tinned:tinned-z3 bash
 apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
 cd /opt/hands-on-solvers/sudoku2smt
-./gensmt.rb input.csv # translate problem to SMT
+./gensat.rb input.csv # translate problem to SMT
 z3 sudoku9x9.smt2
 ```
 
@@ -52,6 +52,6 @@ cd /opt/hands-on-solvers
 apt-get update && apt-get install python-pip
 pip install z3-solver
 ./pythonz3.py
-./solveSudoku.py sudoku9x9.txt
+./solveSudoku.py xample.txt
 ```
 
