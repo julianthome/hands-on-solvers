@@ -27,7 +27,7 @@ docker run -it julianthome/tinned:tinned-cvc4 bash
 apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
 cd /opt/hands-on-solvers/sudoku2smt
-./gensat.rb input.csv # translate problem to SMT
+./gensmt.rb input.csv # translate problem to SMT
 cvc4 --lang smt2 input.smt2
 ```
 
@@ -39,7 +39,7 @@ docker run -it julianthome/tinned:tinned-z3 bash
 apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
 cd /opt/hands-on-solvers/sudoku2smt
-./gensat.rb input.csv # translate problem to SMT
+./gensmt.rb input.csv # translate problem to SMT
 z3 sudoku9x9.smt2
 ```
 
