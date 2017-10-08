@@ -10,9 +10,13 @@ instruction below.
 ```bash
 docker pull julianthome/tinned:tinned-minisat
 docker run -it julianthome/tinned:tinned-minisat bash
+apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
-cd /opt/hands-on-solvers
-minisat sudoku9x9.cnf model.txt
+cd /opt/hands-on-solvers/sudoku2sat
+./gensat.rb input.csv # translate problem to DIMACS
+minisat input.cnf model.txt # solve problem
+# you can map the variable id to the sudoku grid by using input.vmap file which
+# is generated automatically
 ```
 
 ## CVC4
@@ -20,9 +24,11 @@ minisat sudoku9x9.cnf model.txt
 ```bash
 docker pull julianthome/tinned:tinned-cvc4
 docker run -it julianthome/tinned:tinned-cvc4 bash
+apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
-cd /opt/hands-on-solvers
-cvc4 --lang smt2 sudoku9x9.smt2
+cd /opt/hands-on-solvers/sudoku2smt
+./gensat.rb input.csv # translate problem to SMT
+cvc4 --lang smt2 input.smt2
 ```
 
 ## Z3
@@ -30,8 +36,10 @@ cvc4 --lang smt2 sudoku9x9.smt2
 ```bash
 docker pull julianthome/tinned:tinned-z3
 docker run -it julianthome/tinned:tinned-z3 bash
+apt-get install ruby
 cd /opt && git clone https://github.com/julianthome/hands-on-solvers
-cd /opt/hands-on-solvers
+cd /opt/hands-on-solvers/sudoku2smt
+./gensat.rb input.csv # translate problem to SMT
 z3 sudoku9x9.smt2
 ```
 
